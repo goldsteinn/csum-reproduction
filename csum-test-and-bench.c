@@ -314,8 +314,8 @@ tester() {
                     continue;
                 }
                 uint64_t wsum = get_rval(&rvals);
-                assert(csum_partial_old(buf, len, wsum) ==
-                       csum_partial_new(buf, len, wsum));
+                assert(csum_partial_old(buf + align, len, wsum) ==
+                       csum_partial_new(buf + align, len, wsum));
             }
         }
         fprintf(stderr, " -- Success\n");
